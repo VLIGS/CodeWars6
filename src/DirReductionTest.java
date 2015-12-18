@@ -9,6 +9,9 @@ public class DirReductionTest {
                 new String[]{"WEST"},
                 DirReduction.dirReduc(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}));
 
+        assertEquals("\"NORTH\",\"SOUTH\",\"SOUTH\",\"EAST\",\"WEST\",\"NORTH\"",
+                new String[] {}, DirReduction.dirReduc(new String[]{"NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"}));
+
         assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\"",
                 new String[]{"NORTH", "WEST", "SOUTH", "EAST"},
                 DirReduction.dirReduc(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
