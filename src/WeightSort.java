@@ -33,17 +33,26 @@ public class WeightSort {
         unsortedStringFlag = checkIfSorted(myOrderedArray);
         while (unsortedStringFlag){
             myOrderedArray = sortIfEqualNumericalStrings(myOrderedArray);
+            unsortedStringFlag = false;
         }
         String mySortedString = "";
         for(int i = 0; i<myOrderedArray.size();i++){
-            mySortedString = myOrderedArray.get(i) + " ";
+            mySortedString = mySortedString + myOrderedArray.get(i) + " ";
         }
-        mySortedString.trim();
-        return mySortedString;
+        return mySortedString.trim();
     }
     public static List<String> sortIfEqualNumericalStrings(List<String> myListToSort){
-        List<String> mySortedList = new ArrayList<String>();
-        return mySortedList;
+        for(int i = 0; i < myListToSort.size()-1; i++){
+            if(sumOfDigits(myListToSort.get(i)) == sumOfDigits((myListToSort.get(i+1)))){
+                if(myListToSort.get(i).compareTo(myListToSort.get(i+1))>0){
+                    String myFirstString = myListToSort.get(i);
+                    String mySecondString = myListToSort.get(i+1);
+                    myListToSort.set(i,mySecondString);
+                    myListToSort.set(i+1,myFirstString);
+                }
+            }
+        }
+        return myListToSort;
     }
     public static boolean checkIfSorted(List<String> myList){
         for(int i = 0; i < myList.size()-1; i++){
@@ -57,8 +66,47 @@ public class WeightSort {
         int mySum=0;
         for(int k = 0; k<myStringOfDigits.length(); k++){
             String myCharacter = String.valueOf(myStringOfDigits.charAt(k));
-            mySum = mySum + Integer.parseInt(myCharacter);
+            if(!(myCharacter.equals("[")||myCharacter.equals("]"))) {
+                mySum = mySum + Integer.parseInt(myCharacter);
+            }
         }
         return mySum;
     }
 }
+
+/**
+public class WeightSort {
+
+    public static String orderWeight(String strng) {
+        String[] nums = strng.split(" ");
+        int N = nums.length;
+        for (int i = 1; i < N; i++) {
+            for (int j = i; j > 0 && less(nums[j], nums[j-1]) ; j--) {
+                swap(nums, j, j - 1);
+            }
+        }
+        return String.join(" ", nums);
+    }
+
+    private static boolean less(String a, String b) {
+        int sumA = sumOfDigits(a);
+        int sumB = sumOfDigits(b);
+        return ((sumA == sumB) ? a.compareTo(b) < 0 : sumA < sumB);
+    }
+
+    private static int sumOfDigits(String a) {
+        int sum = 0;
+        for (char ch : a.toCharArray()) {
+            sum += Integer.parseInt(String.valueOf(ch));
+        }
+        return sum;
+    }
+
+    private static void swap(String[] a, int i, int j){
+        String t = a[i];
+        a[i] = a[j];
+        a[j] = t;
+    }
+}
+
+ **/
