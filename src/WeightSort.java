@@ -29,7 +29,29 @@ public class WeightSort {
             myStringList.remove(minIndex);
         }
         //sort taking into consideration strings with same numerical values
-        return null;
+        boolean unsortedStringFlag=false;
+        unsortedStringFlag = checkIfSorted(myOrderedArray);
+        while (unsortedStringFlag){
+            myOrderedArray = sortIfEqualNumericalStrings(myOrderedArray);
+        }
+        String mySortedString = "";
+        for(int i = 0; i<myOrderedArray.size();i++){
+            mySortedString = myOrderedArray.get(i) + " ";
+        }
+        mySortedString.trim();
+        return mySortedString;
+    }
+    public static List<String> sortIfEqualNumericalStrings(List<String> myListToSort){
+        List<String> mySortedList = new ArrayList<String>();
+        return mySortedList;
+    }
+    public static boolean checkIfSorted(List<String> myList){
+        for(int i = 0; i < myList.size()-1; i++){
+            if(sumOfDigits(myList.get(i)) == sumOfDigits((myList.get(i+1)))){
+                if(myList.get(i).compareTo(myList.get(i+1))>0){return true;}
+            }
+        }
+        return false;
     }
     public static int sumOfDigits(String myStringOfDigits){
         int mySum=0;
