@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class WeightSort {
@@ -15,6 +16,19 @@ public class WeightSort {
             }
             myIntegerList.add(i,mySum);
         }
+
+        /**
+        for(int i = 0; i < myIntegerList.size(); i++){
+
+        }
+         **/
+
+        List<String> myOrderedArray = new ArrayList<String>();
+
+        int minIndex = myIntegerList.indexOf(Collections.min(myIntegerList));
+        myOrderedArray.add(myStringList.get(minIndex));
+        myIntegerList.remove(minIndex);
+        myStringList.remove(minIndex);
 
         return null;
     }
