@@ -1,23 +1,21 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class WeightSort {
 
     public static String orderWeight(String strng) {
-        String [] myArrayString = strng.split(" ");
-        int [] myArrayInteger = new int [myArrayString.length];
-        for(int i = 0; i<myArrayString.length; i++){
+        List<String> myStringList = Arrays.asList(strng.split(" "));
+        List<Integer> myIntegerList = new ArrayList<Integer>();
+        for(int i = 0; i<myStringList.size(); i++){
             int mySum=0;
-            for(int k = 0; k<myArrayString[i].length(); k++){
-                String myCharacter = String.valueOf(myArrayString[i].charAt(k));
+            for(int k = 0; k<myStringList.get(i).length(); k++){
+                String myCharacter = String.valueOf(myStringList.get(i).charAt(k));
                 mySum = mySum + Integer.parseInt(myCharacter);
             }
-            myArrayInteger[i] = mySum;
+            myIntegerList.add(i,mySum);
         }
-        int min = myArrayInteger[0];
-        for(int i = 1; i < myArrayInteger.length; i++){
-            if(myArrayInteger[i]<min){
-                min=myArrayInteger[i];
-            }
-        }
-        
+
         return null;
     }
 }
