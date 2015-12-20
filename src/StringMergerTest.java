@@ -2,12 +2,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StringMergerTest {
-    /**
+
     @Test
     public void bananasTest() {
         assertTrue("I am going bananas", StringMerger.isMerge("Bananas from Bahamas", "Bahas", "Bananas from am"));
     }
-     **/
+
 
     //'RVXZ]d/!C"nfY:v1_`=wZ"m:oT3k8bTkCRVXZ]d/!C"nfY:ytR'R3a)]\;"^e]usm'KW%2B"H-A%OEgg;35A^NenmjL'
     // is a merge of

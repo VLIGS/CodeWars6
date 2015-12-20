@@ -7,13 +7,13 @@ public class StringMerger {
 
         int part1Count = 0;
         int part2Count = 0;
-        for (int i = 0; i<s.length(); i++){
+        for (int i = 0; i < s.length(); i++){
             char myMergedStringCharacter = s.charAt(i);
-            if(part1.length()!=0 && part1.charAt(0)== myMergedStringCharacter){
-                part1 = part1.substring(1);
+            if(part1.length()>part1Count && part1.charAt(part1Count) == myMergedStringCharacter){
+                part1Count++;
             }
-            else if(part2.length()!=0 && part2.charAt(0)== myMergedStringCharacter){
-                part2 = part2.substring(1);
+            else if(part2.length()>part2Count && part2.charAt(part2Count) == myMergedStringCharacter){
+                part2Count++;
             }
             else{
                 return false;
