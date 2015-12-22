@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StringMerger {
@@ -26,7 +27,13 @@ public class StringMerger {
                 return false;
             }
         }
-        return true;
+        List tmp = new ArrayList(myPart1Order.size());
+        Collections.sort(tmp);
+        boolean sorted1 = tmp.equals(myPart1Order);
+        tmp = new ArrayList(myPart2Order.size());
+        boolean sorted2 = tmp.equals(myPart2Order);
+
+        return sorted1&&sorted2;
     }
     public static String removeCharAt(String s, int pos) {
         StringBuffer buf = new StringBuffer( s.length() - 1 );
