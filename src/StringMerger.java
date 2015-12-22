@@ -9,38 +9,29 @@ public class StringMerger {
             return false;
         }
 
-        /**
-        int part1Count = 0;
-        int part2Count = 0;
-        for (int i = 0; i < s.length(); i++){
-            char myMergedStringCharacter = s.charAt(i);
-            if(part1.length()>part1Count && part1.charAt(part1Count) == myMergedStringCharacter){
-                part1Count++;
+        List<Integer> myPart1Order = new ArrayList<Integer>();
+        List<Integer> myPart2Order = new ArrayList<Integer>();
+
+
+        for (int i =0; i< s.length()-1; i++){
+            if(!(part1.indexOf(s.charAt(i))<0)){
+                myPart1Order.add(part1.indexOf(s.charAt(i)));
+                part1 = removeCharAt(part1, part1.indexOf(s.charAt(i)));
             }
-            else if(part2.length()>part2Count && part2.charAt(part2Count) == myMergedStringCharacter){
-                part2Count++;
+            else if (!(part2.indexOf(s.charAt(i))<0)){
+                myPart2Order.add(part2.indexOf(s.charAt(i)));
+                part2 = removeCharAt(part2, part2.indexOf(s.charAt(i)));
             }
             else{
                 return false;
             }
         }
-        **/
-        for (int i =0; i< s.length()-1; i++){
-            if(!(part1.indexOf(s.charAt(i)) < part1.indexOf(s.charAt(i+1))||
-                    part2.indexOf(s.charAt(i))<part2.indexOf(s.charAt(i+1)))){
-                return false;
-            }
-        }
         return true;
     }
-    public static List<Integer> getAllIndexesOf(char originString, String searchString) {
-        List<Integer> myList = new ArrayList<Integer>();
-            for( int i = 0; i< searchString.length(); i++){
-                if(originString == searchString.charAt(i)){
-                    myList.add(i);
-                }
-            }
-        return myList;
+    public static String removeCharAt(String s, int pos) {
+        StringBuffer buf = new StringBuffer( s.length() - 1 );
+        buf.append( s.substring(0,pos) ).append( s.substring(pos+1) );
+        return buf.toString();
     }
 
 }
