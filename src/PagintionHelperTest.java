@@ -16,7 +16,7 @@ public class PagintionHelperTest {
         assertEquals(2, helper.pageItemCount(1));
         assertEquals(-1, helper.pageItemCount(2));
     }
-/**
+
 
     @Test
     public void Test2() {
@@ -25,5 +25,5 @@ public class PagintionHelperTest {
         assertEquals(-1, helper.pageIndex(20));
         assertEquals(-1, helper.pageIndex(-10));
     }
-**/
+
 }
