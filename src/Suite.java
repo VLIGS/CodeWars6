@@ -1,11 +1,15 @@
+import java.text.DecimalFormat;
+
 public class Suite {
 
     public static double going(int n) {
+        System.out.println("Testing" + n);
         long secondPart = 0;
+        DecimalFormat sixDForm = new DecimalFormat("#.######");
         for (int i = n; i>0; i--){
             secondPart = secondPart + factorial(i);
         }
-        return 1.0/factorial(n) * secondPart;
+        return Double.valueOf(sixDForm.format(1.0/factorial(n) * secondPart));
     }
 
     public static long factorial (int number){
