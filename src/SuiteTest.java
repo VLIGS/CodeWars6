@@ -9,7 +9,8 @@ public class SuiteTest {
 
     @Test
     public void test1() {
-        assertEquals(1.275, Suite.going(5), DELTA);
+        assertEquals(6, Suite.factorial(3), DELTA);
+        //assertEquals(1.275, Suite.going(5), DELTA);
     }
     @Test
     public void test2() {
