@@ -1,7 +1,11 @@
 public class Suite {
 
     public static double going(int n) {
-        return 0.0;
+        long secondPart = 0;
+        for (int i = n; i>0; i--){
+            secondPart = secondPart + factorial(i);
+        }
+        return 1.0/factorial(n) * secondPart;
     }
 
     public static long factorial (int number){
