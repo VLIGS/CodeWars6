@@ -13,7 +13,7 @@ public class DuplicateEncoderTest {
 
     @Test
     public void test2() {
-        
+
         assertEquals("))))())))",DuplicateEncoder.encode("   ()(   "));
     }
 }
