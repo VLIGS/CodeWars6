@@ -8,18 +8,26 @@ public class BraceCheckerTests {
 
     @Test
     public void testValid() {
-        assertEquals(true, checker.isValid("()"));
+        assertEquals(true, checker.isValid("[]"));
     }
 
     @Test
-    public void testInvalid() {
-        assertEquals(false, checker.isValid("[(])"));
+    public void testValid1() {
+        assertEquals(true, checker.isValid("{}"));
     }
 
+    @Test
+    public void testValid2() {
+        assertEquals(true, checker.isValid("(){}[]"));
+    }
+    @Test
+    public void testValid3() {
+        assertEquals(true, checker.isValid("([{}])"));
+    }
+    /**
+    @Test
+    public void testValid4() {
+        assertEquals(true, checker.isValid("({})[({})]"));
+    }
+    **/
 }
-
-//"[({})](]" false
-//"(){}[]" true
-//"(}" false
-//"[(])" false
-//"([{}])" true

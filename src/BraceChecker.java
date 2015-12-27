@@ -1,5 +1,6 @@
 public class BraceChecker {
     public boolean isValid(String braces) {
+        System.out.println(braces);
         if(braces.length()%2!=0){return false;}
         for (int i=0; i<braces.length(); i++){
             switch (braces.charAt(i)){
