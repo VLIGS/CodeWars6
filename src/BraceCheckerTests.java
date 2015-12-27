@@ -17,3 +17,9 @@ public class BraceCheckerTests {
     }
 
 }
+
+//"[({})](]" false
+//"(){}[]" true
+//"(}" false
+//"[(])" false
+//"([{}])" true
