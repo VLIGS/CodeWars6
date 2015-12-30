@@ -38,7 +38,12 @@ public class BraceChecker {
                     break;
             }
         }
-        return true;
+        if(myBracesStack.empty()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 
