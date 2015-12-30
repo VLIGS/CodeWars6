@@ -18,7 +18,7 @@ public class BraceChecker {
                     break;
                 case '{': myBracesStack.push(Character.toString(braces.charAt(i)));
                     break;
-                case '}':if(myBracesStack.empty() || !myBracesStack.peek().equals("}")){
+                case '}':if(myBracesStack.empty() || !myBracesStack.peek().equals("{")){
                     return false;
                 }
                 else{
@@ -27,7 +27,7 @@ public class BraceChecker {
                     break;
                 case '[': myBracesStack.push(Character.toString(braces.charAt(i)));
                     break;
-                case ']': if(myBracesStack.empty() || !myBracesStack.peek().equals("]")){
+                case ']': if(myBracesStack.empty() || !myBracesStack.peek().equals("[")){
                     return false;
                 }
                 else{

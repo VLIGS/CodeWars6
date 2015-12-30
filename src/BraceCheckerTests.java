@@ -24,10 +24,14 @@ public class BraceCheckerTests {
     public void testValid3() {
         assertEquals(true, checker.isValid("([{}])"));
     }
-    /**
+
     @Test
     public void testValid4() {
         assertEquals(true, checker.isValid("({})[({})]"));
     }
-    **/
+
+    @Test
+    public void testInvalid() {
+        assertEquals(false, checker.isValid("(((({{"));
+    }
 }
